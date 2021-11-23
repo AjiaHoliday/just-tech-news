@@ -27,11 +27,12 @@ User.init(
             }
         },
         password: {
-            timestamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'user'
-        }
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4]
+            }
+        },
     },
     {
         // TABLE CONFIGURATION
